@@ -1,8 +1,11 @@
+ARG ARCH
+ARG V=2022.4.1
+
 # FROM scratch
 FROM alpine
 
-ADD https://github.com/cloudflare/cloudflared/releases/download/2022.4.1/cloudflared-linux-${TARGETARCH} /cloudflared
-RUN chmod 755 /cloudflared
+ADD https://github.com/cloudflare/cloudflared/releases/download/${V}/cloudflared-linux-${ARCH} /cloudflared
+RUN chmod +x /cloudflared
 
 RUN adduser -D nonroot
 USER nonroot
