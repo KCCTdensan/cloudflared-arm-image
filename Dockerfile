@@ -2,7 +2,7 @@
 FROM alpine
 
 ARG ARCH
-ARG V=2022.4.1
+ARG V=2022.10.0
 
 ADD https://github.com/cloudflare/cloudflared/releases/download/${V}/cloudflared-linux-${ARCH} /cloudflared
 RUN chmod +x /cloudflared
